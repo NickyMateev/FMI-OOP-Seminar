@@ -4,13 +4,15 @@
 #include "stdafx.h"
 #include "iostream"
 #include "string.h"
-
 using namespace std;
+
+const int MAX_NAME_LENGTH = 100;
+const int MAX_CAPACITY = 100;
 
 struct Person
 {
-	char firstName[100];
-	char lastName[100];
+	char firstName[MAX_NAME_LENGTH];
+	char lastName[MAX_NAME_LENGTH];
 };
 
 struct Client
@@ -46,7 +48,7 @@ void PrintClient(Client c)
 
 void EnterPerson(Person& p)
 {
-	char firstName[100], lastName[100];
+	char firstName[MAX_NAME_LENGTH], lastName[MAX_NAME_LENGTH];
 	cout << "First name: ";
 	cin >> firstName;
 	cout << "Last name: ";
@@ -95,7 +97,7 @@ double GetTotalMoney(Client* clientsArray, int numOfClients)
 
 int main()
 {
-	Client clients[100];
+	Client clients[MAX_CAPACITY];
 	int numberOfClients;
 	cout << "How many clients do you want to enter: ";
 	cin >> numberOfClients;
