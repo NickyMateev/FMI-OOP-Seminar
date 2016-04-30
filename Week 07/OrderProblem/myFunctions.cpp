@@ -1,7 +1,6 @@
-#include <iostream>
-using namespace std;
+#include "myFunctions.h"
 
-int mystrlen(const char*& word)
+int mystrlen(const char* word)
 {
   int length = 0;
   while(word[length] != '\0')

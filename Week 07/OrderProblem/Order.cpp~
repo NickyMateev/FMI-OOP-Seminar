@@ -1,5 +1,5 @@
 #include "Order.h"
-#include "myFunctions.h"
+#include "myFunctions.cpp"
 
 void Order::Resize(size_t newCapacity)
 {
