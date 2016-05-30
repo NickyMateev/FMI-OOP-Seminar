@@ -1,4 +1,4 @@
-#pragma one
+#pragma once
 #include "Contact.h"
 #include "Dictionary.h"
 #include "UserChoice.h"
