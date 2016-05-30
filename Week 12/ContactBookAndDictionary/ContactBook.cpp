@@ -85,9 +85,9 @@ void ContactBook::remove(UserChoice choice, std::string userInput)
   {
     if((choice == NAME && this->contacts[i].getName().compare(userInput) == 0) || (choice == NUMBER && this->contacts[i].getNumber().compare(userInput) == 0) || (choice == ID && this->contacts[i].getID().compare(userInput) == 0))
     {
-      names.remove(this->contacts->getName());
-      numbers.remove(this->contacts->getNumber());
-      ids.remove(this->contacts->getID());
+      names.remove(this->contacts[i].getName());
+      numbers.remove(this->contacts[i].getNumber());
+      ids.remove(this->contacts[i].getID());
 
       shift(i);
       this->contactsCount--;
