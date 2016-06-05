@@ -4,7 +4,7 @@
 #include "UserChoice.h"
 
 const int DEFAULT_CAP_CONTACTS = 32;
-const int RESIZE_COEF_CONTACTS = 1.5;
+const double RESIZE_COEF_CONTACTS = 1.5;
 
 class ContactBook
 {
@@ -17,6 +17,7 @@ class ContactBook
     Dictionary<std::string, Contact*> numbers;
     Dictionary<std::string, Contact*> ids;
 
+    void swap(Contact&, Contact&);
     void resize();
     void copy(const ContactBook& other);
     void destroy();

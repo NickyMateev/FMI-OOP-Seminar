@@ -1,5 +1,12 @@
 #include "ContactBook.h"
 
+void ContactBook::swap(Contact& contact1, Contact& contact2)
+{
+  Contact temp = contact1;
+  contact1 = contact2;
+  contact2 = temp;
+}
+
 void ContactBook::resize()
 {
   int newCap = this->capacity * RESIZE_COEF_CONTACTS;
@@ -36,7 +43,6 @@ void ContactBook::destroy()
 
 void ContactBook::sort(UserChoice choice)
 {
-  std::string temp;
 
   for(int i = 0; i < this->contactsCount - 1; i++)
   {
@@ -45,32 +51,21 @@ void ContactBook::sort(UserChoice choice)
       if(choice == NAME)
       {
         if(this->contacts[i].getName().compare(this->contacts[i + 1].getName()) > 0)
-        {
-          temp = this->contacts[i].getName();
-          this->contacts[i].setName(this->contacts[i + 1].getName());
-          this->contacts[i + 1].setName(temp);
-        }
+          this->swap(this->contacts[i], this->contacts[i + 1]);
       }
       else if (choice == NUMBER)
       {
         if(this->contacts[i].getNumber().compare(this->contacts[i + 1].getNumber()) > 0)
-        {
-          temp = this->contacts[i].getNumber();
-          this->contacts[i].setNumber(this->contacts[i + 1].getNumber());
-          this->contacts[i + 1].setNumber(temp);
-        }
+          this->swap(this->contacts[i], this->contacts[i + 1]);
       }
       else
       {
         if(this->contacts[i].getID().compare(this->contacts[i + 1].getID()) > 0)
-        {
-          temp = this->contacts[i].getID();
-          this->contacts[i].setID(this->contacts[i + 1].getID());
-          this->contacts[i + 1].setID(temp);
-        }
+          this->swap(this->contacts[i], this->contacts[i + 1]);
       }
     }
   }
+
 }
 
 void ContactBook::shift(int index)
