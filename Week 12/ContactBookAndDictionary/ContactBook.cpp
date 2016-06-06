@@ -27,7 +27,7 @@ void ContactBook::copy(const ContactBook& other)
   this->contactsCount = other.contactsCount;
   this->contacts = new Contact[other.capacity];
 
-  for(int i = 0; i < other.capacity; i++)
+  for(int i = 0; i < other.contactsCount; i++)
   {
     this->contacts[i] = other.contacts[i];
     this->names.add(this->contacts[i].getName(), &(this->contacts[i]));
